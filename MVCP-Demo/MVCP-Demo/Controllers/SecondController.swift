@@ -17,7 +17,9 @@ class SecondController: UIViewController {
 	}()
 	
 	override func viewDidLoad() {
+		self.setupView()
 		self.setupSubviews()
+		self.setGestureRecognizers()
 	}
 	
 }
@@ -25,7 +27,7 @@ class SecondController: UIViewController {
 extension SecondController {
 	
 	fileprivate func setupView() {
-		self.view.backgroundColor = .white
+		self.view.backgroundColor = .gray
 	}
 	
 }
