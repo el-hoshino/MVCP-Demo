@@ -19,6 +19,7 @@ class FirstController: UIViewController, Presentee {
 	}
 	
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		self.setupView()
 		self.setGestureRecognizers()
 	}

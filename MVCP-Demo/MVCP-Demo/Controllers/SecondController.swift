@@ -17,6 +17,7 @@ class SecondController: UIViewController {
 	}()
 	
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		self.setupView()
 		self.setupSubviews()
 		self.setGestureRecognizers()
