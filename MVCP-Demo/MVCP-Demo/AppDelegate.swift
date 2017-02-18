@@ -44,3 +44,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: Presenter {
+	
+	func nextPresentation(after currentController: UIViewController, userInfo: [String : Any]?) -> Presenter.Presentation? {
+		switch currentController {
+		case is FirstController:
+			return self.makeSecondController(from: currentController, userInfo: nil)
+			
+		case _:
+			return nil
+		}
+	}
+	
+}
+
+extension AppDelegate {
+	
+	fileprivate func makeSecondController(from controller: UIViewController, userInfo: [String: Any]?) -> Presenter.Presentation {
+		
+		let secondController = SecondController()
+		
+		let completion: (() -> Void)?
+		if let firstController = controller as? FirstController, let tappedLocation = firstController.tappedLocation {
+			completion = {
+				secondController.pinView.bounds.size = CGSize(width: 100, height: 100)
+				secondController.pinView.center = tappedLocation
+			}
+		} else {
+			completion = nil
+		}
+		
+		return (secondController, completion)
+		
+	}
+	
+}
+
