@@ -16,6 +16,7 @@
 		794324B81E57EE940086EFCD /* MVCP_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324B71E57EE940086EFCD /* MVCP_DemoUITests.swift */; };
 		794324C61E57EEC50086EFCD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324C51E57EEC50086EFCD /* Presenter.swift */; };
 		794324CB1E57EFEB0086EFCD /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CA1E57EFEB0086EFCD /* FirstController.swift */; };
+		794324CD1E57F4F20086EFCD /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CC1E57F4F20086EFCD /* SecondController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		794324B91E57EE940086EFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		794324C51E57EEC50086EFCD /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		794324CA1E57EFEB0086EFCD /* FirstController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
+		794324CC1E57F4F20086EFCD /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				794324CA1E57EFEB0086EFCD /* FirstController.swift */,
+				794324CC1E57F4F20086EFCD /* SecondController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				794324C61E57EEC50086EFCD /* Presenter.swift in Sources */,
 				7943249A1E57EE940086EFCD /* ViewController.swift in Sources */,
 				794324981E57EE940086EFCD /* AppDelegate.swift in Sources */,
+				794324CD1E57F4F20086EFCD /* SecondController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
