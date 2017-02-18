@@ -44,9 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate: Presenter {
+extension AppDelegate: PresentationDelegate {
 	
-	func nextPresentation(after currentController: UIViewController, userInfo: [String : Any]?) -> Presenter.Presentation? {
+	func nextPresentation(after currentController: UIViewController, userInfo: [String : Any]?) -> PresentationDelegate.Presentation? {
 		switch currentController {
 		case is ViewController:
 			return self.makeFirstController(from: currentController, userInfo: nil)
@@ -63,14 +63,14 @@ extension AppDelegate: Presenter {
 
 extension AppDelegate {
 	
-	fileprivate func makeFirstController(from controller: UIViewController, userInfo: [String: Any]?) -> Presenter.Presentation {
+	fileprivate func makeFirstController(from controller: UIViewController, userInfo: [String: Any]?) -> PresentationDelegate.Presentation {
 		
 		let firstController = FirstController()
 		return (firstController, nil)
 		
 	}
 	
-	fileprivate func makeSecondController(from controller: UIViewController, userInfo: [String: Any]?) -> Presenter.Presentation {
+	fileprivate func makeSecondController(from controller: UIViewController, userInfo: [String: Any]?) -> PresentationDelegate.Presentation {
 		
 		let secondController = SecondController()
 		

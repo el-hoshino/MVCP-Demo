@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	weak var presenter: Presenter? = {
+	weak var presentationDelegate: PresentationDelegate? = {
 		return UIApplication.shared.delegate as? AppDelegate
 	}()
 
@@ -27,10 +27,10 @@ class ViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		if let presentation = self.presenter?.nextPresentation(after: self, userInfo: nil) {
+		if let presentation = self.presentationDelegate?.nextPresentation(after: self, userInfo: nil) {
 			
-			if let presentee = presentation.controller as? Presentee {
-				presentee.presenter = self.presenter
+			if let controller = presentation.controller as? Presentable {
+				controller.presentationDelegate = self.presentationDelegate
 			}
 			
 			self.present(presentation.controller, animated: false, completion: presentation.completion)
