@@ -536,6 +536,7 @@
 				794324BE1E57EE940086EFCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		794324BF1E57EE940086EFCD /* Build configuration list for PBXNativeTarget "MVCP-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +545,7 @@
 				794324C11E57EE940086EFCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		794324C21E57EE940086EFCD /* Build configuration list for PBXNativeTarget "MVCP-DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +554,7 @@
 				794324C41E57EE940086EFCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
