@@ -10,6 +10,8 @@ import UIKit
 
 protocol Presenter: class {
 	
-	func nextPresentation(after currentController: UIViewController, userInfo: [String: Any]?) -> (controller: UIViewController, completion: (() -> Void)?)?
+	typealias Presentation = (controller: UIViewController, completion: (() -> Void)?)
+	
+	func nextPresentation(after currentController: UIViewController, userInfo: [String: Any]?) -> Presentation?
 	
 }
