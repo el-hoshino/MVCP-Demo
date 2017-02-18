@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstController: UIViewController {
+class FirstController: UIViewController, Presentee {
 	
 	weak var presenter: Presenter?
 	var tappedLocation: CGPoint?
@@ -66,7 +66,13 @@ extension FirstController {
 	private func presentNextController() {
 		
 		if let next = self.presenter?.nextPresentation(after: self, userInfo: nil) {
+			
+			if let presentee = next.controller as? Presentee {
+				presentee.presenter = self.presenter
+			}
+			
 			self.present(next.controller, animated: true, completion: next.completion)
+			
 		}
 		
 	}
