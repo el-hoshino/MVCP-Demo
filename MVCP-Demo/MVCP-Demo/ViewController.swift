@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	weak var presenter: Presenter? = {
+		return UIApplication.shared.delegate as? AppDelegate
+	}()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,7 +23,20 @@ class ViewController: UIViewController {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
-
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if let presentation = self.presenter?.nextPresentation(after: self, userInfo: nil) {
+			
+			if let presentee = presentation.controller as? Presentee {
+				presentee.presenter = self.presenter
+			}
+			
+			self.present(presentation.controller, animated: false, completion: presentation.completion)
+			
+		}
+	}
+	
 }
 
