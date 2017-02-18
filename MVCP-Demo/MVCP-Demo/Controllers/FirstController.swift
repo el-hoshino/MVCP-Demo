@@ -19,7 +19,16 @@ class FirstController: UIViewController {
 	}
 	
 	override func viewDidLoad() {
+		self.setupView()
 		self.setGestureRecognizers()
+	}
+	
+}
+
+extension FirstController {
+	
+	fileprivate func setupView() {
+		self.view.backgroundColor = .white
 	}
 	
 }
