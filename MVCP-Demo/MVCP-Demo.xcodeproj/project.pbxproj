@@ -14,10 +14,10 @@
 		794324A21E57EE940086EFCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794324A01E57EE940086EFCD /* LaunchScreen.storyboard */; };
 		794324AD1E57EE940086EFCD /* MVCP_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324AC1E57EE940086EFCD /* MVCP_DemoTests.swift */; };
 		794324B81E57EE940086EFCD /* MVCP_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324B71E57EE940086EFCD /* MVCP_DemoUITests.swift */; };
-		794324C61E57EEC50086EFCD /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324C51E57EEC50086EFCD /* Presenter.swift */; };
+		794324C61E57EEC50086EFCD /* PresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324C51E57EEC50086EFCD /* PresentationDelegate.swift */; };
 		794324CB1E57EFEB0086EFCD /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CA1E57EFEB0086EFCD /* FirstController.swift */; };
 		794324CD1E57F4F20086EFCD /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CC1E57F4F20086EFCD /* SecondController.swift */; };
-		794324CF1E57FCB10086EFCD /* Presentee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CE1E57FCB10086EFCD /* Presentee.swift */; };
+		794324CF1E57FCB10086EFCD /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794324CE1E57FCB10086EFCD /* Presentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		794324B31E57EE940086EFCD /* MVCP-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVCP-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		794324B71E57EE940086EFCD /* MVCP_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCP_DemoUITests.swift; sourceTree = "<group>"; };
 		794324B91E57EE940086EFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		794324C51E57EEC50086EFCD /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		794324C51E57EEC50086EFCD /* PresentationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationDelegate.swift; sourceTree = "<group>"; };
 		794324CA1E57EFEB0086EFCD /* FirstController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
 		794324CC1E57F4F20086EFCD /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
-		794324CE1E57FCB10086EFCD /* Presentee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentee.swift; sourceTree = "<group>"; };
+		794324CE1E57FCB10086EFCD /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 		794324961E57EE930086EFCD /* MVCP-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				794324C51E57EEC50086EFCD /* Presenter.swift */,
-				794324CE1E57FCB10086EFCD /* Presentee.swift */,
+				794324C51E57EEC50086EFCD /* PresentationDelegate.swift */,
+				794324CE1E57FCB10086EFCD /* Presentable.swift */,
 				794324971E57EE940086EFCD /* AppDelegate.swift */,
 				794324991E57EE940086EFCD /* ViewController.swift */,
 				794324C71E57EFBC0086EFCD /* Controllers */,
@@ -283,9 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				794324CB1E57EFEB0086EFCD /* FirstController.swift in Sources */,
-				794324C61E57EEC50086EFCD /* Presenter.swift in Sources */,
+				794324C61E57EEC50086EFCD /* PresentationDelegate.swift in Sources */,
 				7943249A1E57EE940086EFCD /* ViewController.swift in Sources */,
-				794324CF1E57FCB10086EFCD /* Presentee.swift in Sources */,
+				794324CF1E57FCB10086EFCD /* Presentable.swift in Sources */,
 				794324981E57EE940086EFCD /* AppDelegate.swift in Sources */,
 				794324CD1E57F4F20086EFCD /* SecondController.swift in Sources */,
 			);

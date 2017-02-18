@@ -1,5 +1,5 @@
 //
-//  Presenter.swift
+//  PresentationDelegate.swift
 //  MVCP-Demo
 //
 //  Created by 史翔新 on 2017/02/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Presenter: class {
+protocol PresentationDelegate: class {
 	
 	typealias Presentation = (controller: UIViewController, completion: (() -> Void)?)
 	
