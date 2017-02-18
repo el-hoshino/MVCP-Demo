@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirstController: UIViewController, Presentee {
+class FirstController: UIViewController, Presentable {
 	
-	weak var presenter: Presenter?
+	weak var presentationDelegate: PresentationDelegate?
 	var tappedLocation: CGPoint?
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -66,10 +66,10 @@ extension FirstController {
 	
 	private func presentNextController() {
 		
-		if let next = self.presenter?.nextPresentation(after: self, userInfo: nil) {
+		if let next = self.presentationDelegate?.nextPresentation(after: self, userInfo: nil) {
 			
-			if let presentee = next.controller as? Presentee {
-				presentee.presenter = self.presenter
+			if let controller = next.controller as? Presentable {
+				controller.presentationDelegate = self.presentationDelegate
 			}
 			
 			self.present(next.controller, animated: true, completion: next.completion)
