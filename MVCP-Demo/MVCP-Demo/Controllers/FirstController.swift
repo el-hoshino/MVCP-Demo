@@ -67,11 +67,6 @@ extension FirstController {
 	private func presentNextController() {
 		
 		if let next = self.presentationDelegate?.nextPresentation(after: self, userInfo: nil) {
-			
-			if let controller = next.controller as? Presentable {
-				controller.presentationDelegate = self.presentationDelegate
-			}
-			
 			self.present(next.controller, animated: true, completion: next.completion)
 			
 		}

@@ -10,10 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	weak var presentationDelegate: PresentationDelegate? = {
-		return UIApplication.shared.delegate as? AppDelegate
-	}()
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -26,17 +22,56 @@ class ViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		self.presentController()
+	}
+	
+}
+
+extension ViewController {
+	
+	fileprivate func presentController() {
 		
-		if let presentation = self.presentationDelegate?.nextPresentation(after: self, userInfo: nil) {
+		let firstController = FirstController()
+		firstController.presentationDelegate = self
+		
+		self.present(firstController, animated: false, completion: nil)
+		
+	}
+	
+}
+
+extension ViewController: PresentationDelegate {
+	
+	func nextPresentation(after currentController: UIViewController, userInfo: [String : Any]?) -> PresentationDelegate.Presentation? {
+		switch currentController {
+		case is FirstController:
+			return self.makeSecondController(from: currentController, userInfo: nil)
 			
-			if let controller = presentation.controller as? Presentable {
-				controller.presentationDelegate = self.presentationDelegate
-			}
-			
-			self.present(presentation.controller, animated: false, completion: presentation.completion)
-			
+		case _:
+			return nil
 		}
 	}
 	
 }
 
+extension ViewController {
+	
+	fileprivate func makeSecondController(from controller: UIViewController, userInfo: [String: Any]?) -> PresentationDelegate.Presentation {
+		
+		let secondController = SecondController()
+		
+		let completion: (() -> Void)?
+		if let firstController = controller as? FirstController, let tappedLocation = firstController.tappedLocation {
+			completion = {
+				secondController.pinView.bounds.size = CGSize(width: 100, height: 100)
+				secondController.pinView.center = tappedLocation
+			}
+		} else {
+			completion = nil
+		}
+		
+		return (secondController, completion)
+		
+	}
+	
+}
